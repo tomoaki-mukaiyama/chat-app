@@ -1,24 +1,7 @@
-# README
+$ rails -v
+Rails 6.0.4
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+$ruby -v
+ruby 2.6.6p146 
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+gem 'redis'
