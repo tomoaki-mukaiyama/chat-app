@@ -1,14 +1,24 @@
 import consumer from "./consumer"
 
+// showNewMessage();
+// const showNewMessage = () => {
+//   var nodes = document.querySelectorAll(".message.mb-2")
+//   nodes = Array.from(nodes)
+//   nodes.pop()
+//   .scrollIntoView({
+//     behavior: "instant",
+//     block: "start"
+//   });
+// }
 
 document.addEventListener('turbolinks:load', () => {
-  const room_element = document.getElementById("room-id");
+    const room_element = document.getElementById("room-id");
   const room_id = Number(room_element.getAttribute("data-room-id"));
-  console.log(consumer.subscriptions);
+  // console.log(consumer.subscriptions);
   consumer.subscriptions.create({ channel: "RoomChannel", room_id: room_id }, {
 
     connected() {
-      console.log("conneted to" + room_id)
+      // console.log("conneted to" + room_id)
       // Called when the subscription is ready for use on the server
     },
   
@@ -34,3 +44,7 @@ document.addEventListener('turbolinks:load', () => {
     }
   });
 })
+//helper
+const isSubscribed = (channel, room_id, user_id) => {
+
+}
