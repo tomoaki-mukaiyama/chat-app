@@ -5,6 +5,13 @@ body {
     }
     -ms-overflow-syle: none;
 }
+.active {
+    pointer-events:none;
+    // :hover {
+        
+    // }
+}
+
 .col-3 {
     border-right: 1px solid #E0E3DA;
     // margin-bottom: -15px;

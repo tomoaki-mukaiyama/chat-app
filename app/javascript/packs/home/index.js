@@ -1,8 +1,7 @@
 window.onload = function () {
     var nodes = document.querySelectorAll(".message.mb-2")
     nodes = Array.from(nodes)
-    nodes.pop()
-        .scrollIntoView({
+    nodes.pop().scrollIntoView({
             behavior: "instant",
             block: "start"
         });
@@ -11,8 +10,7 @@ document.body.addEventListener("keydown", function (event) {
     if (event.key === "Escape") {
         var nodes = document.querySelectorAll(".message.mb-2")
         nodes = Array.from(nodes)
-        nodes.pop()
-            .scrollIntoView({
+        nodes.pop().scrollIntoView({
                 behavior: "instant",
                 block: "start"
             });
@@ -25,7 +23,7 @@ function isVisible(elem) {
         y: elem.getBoundingClientRect().top + elem.offsetHeight / 2
     };
     if (elemCenter.y > 821.5) {
-        console.log(elemCenter.y)
+        // console.log(elemCenter.y)
         return false
     } else {
         return true

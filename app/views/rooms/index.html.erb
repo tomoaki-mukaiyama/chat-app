@@ -8,13 +8,14 @@
       <%= render 'form', room: Room.new %>
       <hr><%= javascript_pack_tag 'home/index' %>
       <% @rooms.each do |room| %>
-      <%= link_to room  do %>
-      <div class="card mb-2">
-        <div class="card-body">
-          <%= room.name %>
+        <% active_class = (@room == room) ? 'active' : '' %>
+        <%= link_to room, class: active_class do %>
+        <div class="card mb-2">
+          <div class="card-body">
+            <%= room.name %>
+          </div>
         </div>
-      </div>
-      <% end %>
+        <% end %>
       <% end %>
     </div>
     <div class="col-9">
