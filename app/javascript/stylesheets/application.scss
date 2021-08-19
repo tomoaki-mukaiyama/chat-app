@@ -1,15 +1,29 @@
 body {
     overflow-y: hidden;
+
     ::-webkit-scrollbar {
         display: none;
     }
+
     -ms-overflow-syle: none;
 }
+
+#room_name {
+    margin: 15px 0px;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
 .active {
-    pointer-events:none;
-    // :hover {
-        
-    // }
+    pointer-events: none;
+    text-decoration: none;
+    color: white;
+
+    .card.mb-2 {
+        background-color: #566270;
+    }
 }
 
 .col-3 {
@@ -23,12 +37,17 @@ body {
     width: calc(100% + 30px);
 }
 
+.card.mb-2:hover {
+    background-color: #E0E3DA;
+}
+
 .chat-room {
     height: 100vh;
 
+
     #messages {
         // padding-bottom: 0px;
-        height: 85%;
+        height: 82%;
         overflow-y: scroll;
     }
 
@@ -82,6 +101,7 @@ body {
 
         .btn {
             height: 45px;
+            width: 132px;
         }
     }
 }
