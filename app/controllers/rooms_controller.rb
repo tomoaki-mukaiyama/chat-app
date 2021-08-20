@@ -1,6 +1,10 @@
 class RoomsController < ApplicationController
   before_action :set_room, only: %i[ show edit update destroy ]
 
+  def first_room
+    redirect_to "/rooms/#{Room.first.id}"
+  end
+  
   # GET /rooms or /rooms.json
   def index
     @rooms = Room.all
@@ -30,7 +34,7 @@ class RoomsController < ApplicationController
         format.html { redirect_to @room, notice: "Room was successfully created." }
         format.json { render :show, status: :created, location: @room }
       else
-        format.html { render :new, status: :unprocessable_entity }
+        format.html { render :new   , status: :unprocessable_entity }
         format.json { render json: @room.errors, status: :unprocessable_entity }
       end
     end

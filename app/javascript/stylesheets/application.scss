@@ -8,46 +8,48 @@ body {
     -ms-overflow-syle: none;
 }
 
-#room_name {
-    margin: 15px 0px;
-}
 
-a:hover {
-    text-decoration: none;
-}
+// #room_name {
+//     margin: 15px 0px;
+// }
 
-.active {
-    pointer-events: none;
-    text-decoration: none;
-    color: white;
+// a:hover {
+//     text-decoration: none;
+// }
 
-    .card.mb-2 {
-        background-color: #566270;
-    }
-}
+// .active {
+//     pointer-events: none;
+//     text-decoration: none;
+//     color: white;
 
-.col-3 {
-    border-right: 1px solid #E0E3DA;
+//     .card.mb-2 {
+//         background-color: #566270;
+//     }
+// }
+
+.col-8 {
+    border-right: 1px solid black;
+    border-left: 1px solid black;
     // margin-bottom: -15px;
 }
 
 .navbar {
-    border-bottom: 1px solid #E0E3DA;
+    border-bottom: 1px solid black;
     margin-left: -15px;
     width: calc(100% + 30px);
 }
 
-.card.mb-2:hover {
-    background-color: #E0E3DA;
-}
+// .card.mb-2:hover {
+//     background-color: #E0E3DA;
+// }
 
 .chat-room {
     height: 100vh;
 
 
     #messages {
-        // padding-bottom: 0px;
-        height: 82%;
+        border-bottom: 1px solid black;
+        height: 85%;
         overflow-y: scroll;
     }
 
@@ -85,23 +87,24 @@ a:hover {
     .chat-box {
         position: fixed;
         bottom: 15px;
-        right: 0;
         padding: 20px;
         margin-bottom: -15px;
         margin-left: -15px;
-        width: 75%;
+        width: 66%;
         background-color: white;
-        border-top: 1px solid #E0E3DA;
 
         input[type=text] {
             height: 45px;
             font-size: 18px;
             padding: 8px;
+            border: solid 1px;
         }
+
 
         .btn {
             height: 45px;
             width: 132px;
+            border: solid 1px;
         }
     }
 }
