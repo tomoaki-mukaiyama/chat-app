@@ -1,0 +1,4 @@
+var nodes = document.querySelectorAll(".message.mb-2.me")
+nodes.forEach( node => {
+    node.querySelector(".author").innerText = document.querySelector(".username-form").value
+})

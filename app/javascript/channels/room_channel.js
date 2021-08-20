@@ -50,13 +50,13 @@ document.addEventListener('turbolinks:load', () => {
     }, {
 
       connected() {
-        alert('connected')
+        // alert('connected')
         // console.log("conneted to" + room_id)
         // Called when the subscription is ready for use on the server
       },
 
       disconnected() {
-        alert('disconnected')
+        // alert('disconnected')
         // Called when the subscription has been terminated by the server
       },
 

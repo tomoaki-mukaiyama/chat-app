@@ -12,6 +12,7 @@
           <span class="navbar-brand" href="#">Room:<%= @room.id %></span>
           <ul class="navbar-nav">
             <li class="nav-item">
+              <%= render "users/form", user: @user %>
               Hello,<%= current_user.username %>
             </li>
           </ul>
