@@ -4,25 +4,12 @@
 
 <div class="container-fluid">
   <div class="row">
-    <div class="col-3">
-      <%= render 'form', room: Room.new %>
-      <hr><%= javascript_pack_tag 'home/index' %>
-      <% @rooms.each do |room| %>
-        <% active_class = (@room == room) ? 'active' : '' %>
-        <%= link_to room, class: active_class do %>
-        <div class="card mb-2">
-          <div class="card-body">
-            <%= room.name %>
-          </div>
-        </div>
-        <% end %>
-      <% end %>
-    </div>
-    <div class="col-9">
+    <div class="col-2"></div>
+    <div class="col-8">
       <% if @room.present? %>
       <div class="chat-room">
         <nav class="navbar navbar-light">
-          <span class="navbar-brand" href="#"><%= @room.name %></span>
+          <span class="navbar-brand" href="#">Room:<%= @room.id %></span>
           <ul class="navbar-nav">
             <li class="nav-item">
               Hello,<%= current_user.username %>
@@ -40,5 +27,6 @@
       </div>
       <% end %>
     </div>
+    <div class="col-2"></div>
   </div>
 </div>
