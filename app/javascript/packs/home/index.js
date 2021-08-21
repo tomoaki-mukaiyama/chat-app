@@ -37,10 +37,10 @@ const checkExist = setInterval(() => {
         const observer = new MutationObserver(records => {
             var nodes = document.querySelectorAll(".message.mb-2")
             nodes = Array.from(nodes)
-            if (isVisible(nodes[nodes.length - 2])) {
+            if (isVisible(nodes[nodes.length - 3])) {
                 nodes.pop()
                     .scrollIntoView({
-                        behavior: "smooth",
+                        behavior: "instant",
                         block: "start"
                     });
             }

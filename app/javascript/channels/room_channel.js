@@ -3,12 +3,13 @@ import consumer from "./consumer"
 document.addEventListener('turbolinks:load', () => {
   //部屋に入ると同時に入力フォームをフォーカス
   document.querySelector("#message_content").focus();
-  
+
   const room_element = document.getElementById("room-id");
   const room_id = room_element.getAttribute("data-room-id");
 
   //最新のメッセージへスクロール
   scrollToNewMessage();
+
   function scrollToNewMessage() {
     var nodes = document.querySelectorAll(".message.mb-2")
     nodes = Array.from(nodes)
@@ -61,19 +62,35 @@ document.addEventListener('turbolinks:load', () => {
       },
 
       received(data) {
+        // console.log(data)
+
         const user_element = document.getElementById("user-id");
         const user_id = Number(user_element.getAttribute("data-user-id"));
 
         let html;
 
-        if (user_id === data.message.user_id) {
-          html = data.mine
-        } else {
-          html = data.theirs
-        }
 
-        const messageContainer = document.getElementById("messages");
-        messageContainer.innerHTML = messageContainer.innerHTML + html
+
+        if (data.data_type) {
+          var nodes = document.querySelectorAll(".author")
+          nodes = Array.from(nodes)
+          var results = nodes.filter(node => {
+            return node.innerText === data.preveous_username
+          })
+          results.forEach(result => {
+            result.innerText = data.new_username
+          })
+        } else {
+
+          if (user_id === data.message.user_id) {
+            html = data.mine
+          } else {
+            html = data.theirs
+          }
+
+          const messageContainer = document.getElementById("messages");
+          messageContainer.innerHTML = messageContainer.innerHTML + html
+        }
         // console.log(data)
       }
     });
