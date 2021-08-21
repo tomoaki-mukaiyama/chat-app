@@ -48,8 +48,7 @@ body {
 
 
     #messages {
-        border-bottom: 1px solid black;
-        height: 85%;
+        height: calc(100% - 156px);
         overflow-y: scroll;
     }
 
@@ -90,8 +89,8 @@ body {
         padding: 20px;
         margin-bottom: -15px;
         margin-left: -15px;
-        width: 66%;
-        background-color: white;
+        border-top: 1px solid black;
+        width: 66.5%;
 
         input[type=text] {
             height: 45px;

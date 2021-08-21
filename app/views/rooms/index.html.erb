@@ -9,17 +9,18 @@
       <% if @room.present? %>
       <div class="chat-room">
         <nav class="navbar navbar-light">
-          <span class="navbar-brand" href="#">Room:<%= @room.id %></span>
-          <ul class="navbar-nav">
-            <li class="nav-item">
+          <div class="navbar-nav">
+            <div class="hello">
+              Hello,
+            </div>
+            <div class="user-form">
               <%= render "users/form", user: @user %>
-              Hello,<%= current_user.username %>
-            </li>
-          </ul>
+            </div>
+          </div>
         </nav>
         <div id="messages">
-          <% @room.messages.each do |message| %>
-            <%= render 'messages/message', message: message %>
+          <% @room.messages.last(5).each do |message| %>
+          <%= render 'messages/message', message: message %>
           <% end %>
         </div>
         <div class="chat-box">
