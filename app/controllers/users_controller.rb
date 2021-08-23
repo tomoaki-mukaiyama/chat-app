@@ -6,8 +6,10 @@ class UsersController < ApplicationController
         format.js
       end
     end
-    new_username = User.find_by(user_params).username
-    ActionCable.server.broadcast "room_channel_30", preveous_username: preveous_username, new_username: new_username, data_type: "username"
+    new_user = User.find_by(user_params)
+    new_username = new_user.username
+    room_id_for_room_channel = new_user.room_id
+    ActionCable.server.broadcast "room_channel_#{room_id_for_room_channel}", preveous_username: preveous_username, new_username: new_username, data_type: "username"
   end
 
 
@@ -18,6 +20,6 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:username)
+    params.require(:user).permit(:username, :room_id)
   end
 end

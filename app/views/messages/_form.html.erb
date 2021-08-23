@@ -1,4 +1,5 @@
 <%= form_for(message, remote: true) do |form| %>
+
 <% if message.errors.any? %>
 <div id="error_explanation">
   <h2><%= pluralize(message.errors.count, "error") %> prohibited this message from being saved:</h2>
@@ -10,6 +11,7 @@
   </ul>
 </div>
 <% end %>
+
 <%= form.hidden_field :room_id, value: room.id %>
 
 <div class="input-group">

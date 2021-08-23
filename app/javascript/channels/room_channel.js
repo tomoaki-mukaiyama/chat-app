@@ -71,6 +71,7 @@ document.addEventListener('turbolinks:load', () => {
 
 
 
+        console.log(data.data_type)
         if (data.data_type) {
           var nodes = document.querySelectorAll(".author")
           nodes = Array.from(nodes)
