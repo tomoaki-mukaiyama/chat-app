@@ -6,9 +6,8 @@ class UsersController < ApplicationController
         format.js
       end
     end
-    new_user = User.find_by(user_params)
-    new_username = new_user.username
-    room_id_for_room_channel = new_user.room_id
+    new_username = @user.username
+    room_id_for_room_channel = @user.room_id
     ActionCable.server.broadcast "room_channel_#{room_id_for_room_channel}", preveous_username: preveous_username, new_username: new_username, data_type: "username"
   end
 
