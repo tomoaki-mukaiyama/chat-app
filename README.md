@@ -8,9 +8,7 @@ gem 'redis'
 
 今後
 
+form submitボタン不要
 チャットルーム
 無限スクロール
-
 SP対応
-
-room form
