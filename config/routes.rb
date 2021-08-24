@@ -3,5 +3,5 @@ Rails.application.routes.draw do
   resources :rooms
   resources :users
   
-  root "rooms#first_room"
+  root "rooms#index"
 end

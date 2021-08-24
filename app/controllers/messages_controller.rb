@@ -1,5 +1,5 @@
 class MessagesController < ApplicationController
-  before_action :set_message, only: %i[ show edit update destroy ]
+  before_action :set_message, only: %i[ show edit update ]
 
   # GET /messages or /messages.json
   def index
@@ -43,17 +43,14 @@ class MessagesController < ApplicationController
 
   # DELETE /messages/1 or /messages/1.json
   def destroy
-    @message.destroy
-    respond_to do |format|
-      format.html { redirect_to messages_url, notice: "Message was successfully destroyed." }
-      format.json { head :no_content }
-    end
+    Message.all.each{|a|a.destroy}
+    redirect_to @room
   end
 
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_message
-      @message = Message.find(params[:id])
+      @message = Message.find_by(id: params[:id])
     end
 
     # Only allow a list of trusted parameters through.

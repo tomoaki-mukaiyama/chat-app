@@ -13,7 +13,8 @@ class RoomsController < ApplicationController
   # GET /rooms/1 or /rooms/1.json
   def show
     @rooms = Room.all
-    render 'index'
+    @user = User.find_by(id: current_user.id)
+    render 'show'
   end
 
   # GET /rooms/new
@@ -65,8 +66,7 @@ class RoomsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_room
-      @room = Room.find(params[:id])
-      @user = User.find_by(id: current_user.id)
+      @room = Room.find_by(id: params[:id])
     end
 
     # Only allow a list of trusted parameters through.

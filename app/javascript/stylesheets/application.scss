@@ -8,29 +8,18 @@ body {
     -ms-overflow-syle: none;
 }
 
+ul {
+    list-style: none;
+    margin-left: -42px;
+}
 
-// #room_name {
-//     margin: 15px 0px;
-// }
+.index-header {
+    height: 100px
+}
 
-// a:hover {
-//     text-decoration: none;
-// }
-
-// .active {
-//     pointer-events: none;
-//     text-decoration: none;
-//     color: white;
-
-//     .card.mb-2 {
-//         background-color: #566270;
-//     }
-// }
-
-.col-8 {
+.col-8.room-show{
     border-right: 1px solid black;
     border-left: 1px solid black;
-    // margin-bottom: -15px;
 }
 
 .navbar {
@@ -38,10 +27,6 @@ body {
     margin-left: -15px;
     width: calc(100% + 30px);
 }
-
-// .card.mb-2:hover {
-//     background-color: #E0E3DA;
-// }
 
 .chat-room {
     height: 100vh;
@@ -98,7 +83,6 @@ body {
             padding: 8px;
             border: solid 1px;
         }
-
 
         .btn {
             height: 45px;

@@ -19,11 +19,37 @@ document.addEventListener('turbolinks:load', () => {
     });
   }
 
-  //全部屋に同時に送信しないように部屋を移動するたびにサブスクを全削除
-  //応急処置
-  consumer.subscriptions.subscriptions.forEach((sub) => {
-    consumer.subscriptions.remove(sub)
-  })
+  // //全部屋に同時に送信しないように部屋を移動するたびにサブスクを全削除
+  // //応急処置
+  // consumer.subscriptions.subscriptions.forEach((sub) => {
+  //   consumer.subscriptions.remove(sub)
+  // })
+
+//購読中のチャンネル情報をログ出力する
+  function logOutputChannel() {
+    console.log('++++++++++debug++++++++++');
+    console.log('Subscribed channel');
+
+    // 購読中のチャンネル数
+    var count = consumer.subscriptions['subscriptions'].length;
+    console.log('> count:' + count);
+
+    // 購読中のチャンネル情報
+    var subscriptions = consumer.subscriptions['subscriptions'];
+    subscriptions.forEach(function (subscription) {
+        var identifier = subscription.identifier;
+
+        var obj = JSON.parse(identifier);
+        //=> {channel: "MessagesChannel", room: "1"}
+
+        console.log('> channnel:' + obj.channel + ',room:' + obj.room);
+
+    });
+    console.log('+++++++++++++++++++++++++');
+}
+
+logOutputChannel()
+  
 
   //チャンネルがサブスクされてる数を取得
   function countSpecificChannel(channel, room) {

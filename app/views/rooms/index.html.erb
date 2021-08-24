@@ -1,33 +1,15 @@
-<%= javascript_pack_tag 'home/index' %>
-<div id="room-id" data-room-id="<%= @room.try(:id) %>"></div>
-<div id="user-id" data-user-id="<%= current_user.id %>"></div>
-
+<% provide(:title, "Room Index") %>
 <div class="container-fluid">
   <div class="row">
-    <div class="col-2"></div>
+    <div class="col-12 index-header"></div>
+    <div class="col-2">
+    </div>
     <div class="col-8">
-      <% if @room.present? %>
-      <div class="chat-room">
-        <nav class="navbar navbar-light">
-          <div class="navbar-nav">
-            <div class="hello">
-              Hello,
-            </div>
-            <div class="user-form">
-              <%= render "users/form", user: @user %>
-            </div>
-          </div>
-        </nav>
-        <div id="messages">
-          <% @room.messages.last(5).each do |message| %>
-          <%= render 'messages/message', message: message %>
-          <% end %>
-        </div>
-        <div class="chat-box">
-          <%= render 'messages/form', message: Message.new, room: @room %>
-        </div>
-      </div>
-      <% end %>
+      <ul>
+        <% @rooms.each do |room| %>
+        <li><%= link_to "Room #{room.id}", "/rooms/#{room.id}" %></li>
+        <% end %>
+      </ul>
     </div>
     <div class="col-2"></div>
   </div>
