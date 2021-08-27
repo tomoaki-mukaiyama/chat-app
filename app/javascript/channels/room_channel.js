@@ -2,6 +2,11 @@ import consumer from "./consumer"
 
 document.addEventListener('turbolinks:load', () => {
   console.log("1")
+  console.log(consumer.subscriptions)
+    // //全部屋に同時に送信しないように部屋を移動するたびにサブスクを全削除
+    consumer.subscriptions.subscriptions.forEach((sub) => {
+      consumer.subscriptions.remove(sub)
+    })
   //部屋に入ると同時に入力フォームをフォーカス
   document.querySelector("#message_content").focus();
 
@@ -23,11 +28,7 @@ document.addEventListener('turbolinks:load', () => {
     }
   }
 
-  // //全部屋に同時に送信しないように部屋を移動するたびにサブスクを全削除
-  // //応急処置
-  // consumer.subscriptions.subscriptions.forEach((sub) => {
-  //   consumer.subscriptions.remove(sub)
-  // })
+
 
   //チャンネルがサブスクされてる数を取得
   function countSpecificChannel(channel, room) {
