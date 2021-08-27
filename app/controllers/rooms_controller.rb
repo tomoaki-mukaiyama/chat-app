@@ -7,7 +7,7 @@ class RoomsController < ApplicationController
   
   # GET /rooms or /rooms.json
   def index
-    @rooms = Room.all
+    @rooms = Room.all.order(created_at: :desc)
   end
   
   # GET /rooms/1 or /rooms/1.json
