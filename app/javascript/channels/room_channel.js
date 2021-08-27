@@ -1,8 +1,8 @@
 import consumer from "./consumer"
 
 document.addEventListener('turbolinks:load', () => {
-  console.log("1")
-  console.log(consumer.subscriptions)
+  // console.log("1")
+  // console.log(consumer.subscriptions)
     // //全部屋に同時に送信しないように部屋を移動するたびにサブスクを全削除
     consumer.subscriptions.subscriptions.forEach((sub) => {
       consumer.subscriptions.remove(sub)
@@ -15,7 +15,7 @@ document.addEventListener('turbolinks:load', () => {
 
   //最新のメッセージへスクロール
   scrollToNewMessage();
-  console.log("2")
+  // console.log("2")
 
   function scrollToNewMessage() {
     var nodes = document.querySelectorAll(".message.mb-2")
@@ -56,7 +56,7 @@ document.addEventListener('turbolinks:load', () => {
 
       connected() {
         // alert('connected')
-        console.log("conneted to" + room_id)
+        // console.log("conneted to" + room_id)
         // Called when the subscription is ready for use on the server
       },
 
@@ -75,7 +75,7 @@ document.addEventListener('turbolinks:load', () => {
 
 
 
-        console.log(data.data_type)
+        // console.log(data.data_type)
         if (data.data_type) {
           var nodes = document.querySelectorAll(".author")
           nodes = Array.from(nodes)
