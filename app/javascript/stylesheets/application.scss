@@ -13,7 +13,14 @@ ul {
     margin-left: -42px;
 }
 
-.room-index > a {
+.hello,.user-form{
+    float: left;
+}
+.room-index {
+    margin-bottom: 15px;
+}
+
+.room-index>a {
     color: black;
     padding: 10px 20px;
     border-radius: 3px;
@@ -21,7 +28,7 @@ ul {
 
 }
 
-.room-index > a:hover {
+.room-index>a:hover {
     background-color: #c7dbfa;
     text-decoration: none;
     color: black;
@@ -30,6 +37,7 @@ ul {
 .room-index {
     margin-top: 15px;
     text-align: center;
+    width: max-content;
 }
 
 #room_name {
@@ -46,10 +54,19 @@ ul {
     border-left: 1px solid black;
 }
 
+.navbar-top {
+    height: 50px;
+}
+
 .navbar {
     border-bottom: 1px solid black;
     margin-left: -15px;
     width: calc(100% + 30px);
+}
+
+.nav-inner-left {
+    justify-content: start;
+
 }
 
 .chat-room {
