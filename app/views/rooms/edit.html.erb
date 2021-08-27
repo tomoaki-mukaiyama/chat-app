@@ -1,6 +1,12 @@
-<h1>Editing Room</h1>
-
-<%= render 'form', room: @room %>
-
-<%= link_to 'Show', @room %> |
-<%= link_to 'Back', rooms_path %>
+<% provide(:title, "部屋名編集") %>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12 index-header"></div>
+        <div class="col-4">
+        </div>
+        <div class="col-4">
+            <%= render 'form', room: @room %>
+        </div>
+        <div class="col-4"></div>
+    </div>
+</div>

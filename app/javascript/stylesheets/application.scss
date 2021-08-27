@@ -16,25 +16,25 @@ ul {
 .hello,.user-form{
     float: left;
 }
-.room-index {
-    margin-bottom: 15px;
-}
 
-.room-index>a {
+.navbar-button>a {
     color: black;
     padding: 10px 20px;
     border-radius: 3px;
     border: solid 1px black;
-
+    
 }
 
-.room-index>a:hover {
+.navbar-button>a:hover {
     background-color: #c7dbfa;
     text-decoration: none;
     color: black;
 }
 
-.room-index {
+.navbar-button {
+    margin-right: 15px;
+    float: left;
+    margin-bottom: 15px;
     margin-top: 15px;
     text-align: center;
     width: max-content;

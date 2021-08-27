@@ -11,8 +11,11 @@
       <div class="chat-room">
         <nav class="navbar navbar-light">
         <div class="nav-inner-left">
-            <div class="room-index">
+            <div class="navbar-button">
               <%= link_to "部屋一覧", "/rooms" %>
+            </div>
+            <div class="navbar-button">
+              <%= link_to "部屋削除", "/rooms/#{@room.id}", method: :delete %>
             </div>
         </div>
         <div class="nav-inner-right">
