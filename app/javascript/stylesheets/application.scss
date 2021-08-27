@@ -13,6 +13,25 @@ ul {
     margin-left: -42px;
 }
 
+.room-index > a {
+    color: black;
+    padding: 10px 20px;
+    border-radius: 3px;
+    border: solid 1px black;
+
+}
+
+.room-index > a:hover {
+    background-color: #c7dbfa;
+    text-decoration: none;
+    color: black;
+}
+
+.room-index {
+    margin-top: 15px;
+    text-align: center;
+}
+
 #room_name {
     max-width: 300px;
     margin-bottom: 30px;
@@ -22,7 +41,7 @@ ul {
     height: 100px
 }
 
-.col-8.room-show{
+.col-8.room-show {
     border-right: 1px solid black;
     border-left: 1px solid black;
 }
@@ -49,9 +68,10 @@ ul {
             display: inline-block;
 
             .content {
-                background-color: #E0E3DA;
+                border: solid 1px black;
+                background-color: #ebedf0;
                 padding: 3px 16px;
-                border-radius: 5px;
+                border-radius: 3px;
             }
 
             .author {
@@ -66,8 +86,9 @@ ul {
                 float: right;
 
                 .content {
-                    background-color: #007bff;
-                    color: white;
+                    border: solid 1px black;
+                    background-color: #adc9f5;
+                    color: black;
                 }
             }
         }
