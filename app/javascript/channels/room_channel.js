@@ -1,6 +1,7 @@
 import consumer from "./consumer"
 
 document.addEventListener('turbolinks:load', () => {
+  console.log("1")
   //部屋に入ると同時に入力フォームをフォーカス
   document.querySelector("#message_content").focus();
 
@@ -9,14 +10,17 @@ document.addEventListener('turbolinks:load', () => {
 
   //最新のメッセージへスクロール
   scrollToNewMessage();
+  console.log("2")
 
   function scrollToNewMessage() {
     var nodes = document.querySelectorAll(".message.mb-2")
     nodes = Array.from(nodes)
-    nodes.pop().scrollIntoView({
-      behavior: "instant",
-      block: "start"
-    });
+    if (nodes.length &&  nodes.length > 0) {
+      nodes.pop().scrollIntoView({
+        behavior: "instant",
+        block: "start"
+      });
+    }
   }
 
   // //全部屋に同時に送信しないように部屋を移動するたびにサブスクを全削除
@@ -24,32 +28,6 @@ document.addEventListener('turbolinks:load', () => {
   // consumer.subscriptions.subscriptions.forEach((sub) => {
   //   consumer.subscriptions.remove(sub)
   // })
-
-//購読中のチャンネル情報をログ出力する
-  function logOutputChannel() {
-    console.log('++++++++++debug++++++++++');
-    console.log('Subscribed channel');
-
-    // 購読中のチャンネル数
-    var count = consumer.subscriptions['subscriptions'].length;
-    console.log('> count:' + count);
-
-    // 購読中のチャンネル情報
-    var subscriptions = consumer.subscriptions['subscriptions'];
-    subscriptions.forEach(function (subscription) {
-        var identifier = subscription.identifier;
-
-        var obj = JSON.parse(identifier);
-        //=> {channel: "MessagesChannel", room: "1"}
-
-        console.log('> channnel:' + obj.channel + ',room:' + obj.room);
-
-    });
-    console.log('+++++++++++++++++++++++++');
-}
-
-logOutputChannel()
-  
 
   //チャンネルがサブスクされてる数を取得
   function countSpecificChannel(channel, room) {
@@ -64,7 +42,6 @@ logOutputChannel()
     });
     return i;
   }
-
   //そのチャンネルがすでにサブスクされてたら新たに作成しない
   //重複防止
   if (countSpecificChannel("RoomChannel", room_id) === 1) {
@@ -78,7 +55,7 @@ logOutputChannel()
 
       connected() {
         // alert('connected')
-        // console.log("conneted to" + room_id)
+        console.log("conneted to" + room_id)
         // Called when the subscription is ready for use on the server
       },
 

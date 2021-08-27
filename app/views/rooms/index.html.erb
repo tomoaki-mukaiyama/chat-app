@@ -5,9 +5,10 @@
     <div class="col-2">
     </div>
     <div class="col-8">
+    <%= render 'rooms/form', room: Room.new %>
       <ul>
         <% @rooms.each do |room| %>
-        <li><%= link_to "Room #{room.id}", "/rooms/#{room.id}" %></li>
+        <li><%= link_to "Room #{room.id} - #{room.name}", "/rooms/#{room.id}" %></li>
         <% end %>
       </ul>
     </div>
