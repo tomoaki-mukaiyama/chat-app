@@ -3,14 +3,10 @@ class ApplicationController < ActionController::Base
 
     def current_user
         return @current_user if @current_user.present?
+
         if session[:user_id].present?
-            if @current_user = User.find_by(id: session[:user_id])
-                @current_user
-            else
-                @current_user = User.generate
-                session[:user_id] = @current_user.id
-                @current_user
-            end
+            @current_user = User.find(session[:user_id])
+            @current_user
         else
             @current_user = User.generate
             session[:user_id] = @current_user.id
