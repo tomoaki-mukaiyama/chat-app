@@ -1,7 +1,6 @@
 class User < ApplicationRecord
     validates_uniqueness_of :username 
 
-
     def self.generate
         adjectives = ['Super', 'Hyper', 'Master', 'Ultra', 'Ultimate', 'Regular']
         nouns = ['Movie', 'Table', 'Computer', 'Food', 'Money']

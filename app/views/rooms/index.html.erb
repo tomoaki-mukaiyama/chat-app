@@ -1,11 +1,16 @@
 <% provide(:title, "部屋一覧") %>
+<ul style="margin: 15px;">
+  <li>session => <%= session[:user_id] %></li>
+  <li>username => <%= current_user.username  %></li>
+  <li>session => <%= session[:user_id] %></li>
+</ul>
 <div class="container-fluid">
   <div class="row">
     <div class="col-12 index-header"></div>
     <div class="col-4">
     </div>
     <div class="col-4">
-    <%= render 'rooms/form', room: Room.new %>
+      <%= render 'rooms/form', room: Room.new %>
       <ul>
         <% @rooms.each do |room| %>
         <li><%= link_to " - #{room.name}", "/rooms/#{room.id}" %></li>
