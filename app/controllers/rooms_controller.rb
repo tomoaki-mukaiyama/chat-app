@@ -1,5 +1,6 @@
 class RoomsController < ApplicationController
   before_action :set_room, only: %i[ show edit update destroy ]
+  protect_from_forgery except: :show_additionally
 
   def first_room
     redirect_to "/rooms/#{Room.first.id}"
@@ -15,6 +16,15 @@ class RoomsController < ApplicationController
     @rooms = Room.all
     @user = User.find_by(id: current_user.id)
     render 'show'
+  end
+
+  def show_additionally
+    last_id = params[:last_id].to_i
+    room_id = Message.find(last_id).room_id
+    @messages = Message.where(id: 1..last_id, room_id: room_id).last(5)
+    # logger.debug("")
+    # Rails.logger.level = 1
+    # byebug
   end
 
   # GET /rooms/new

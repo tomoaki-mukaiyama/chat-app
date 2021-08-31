@@ -28,7 +28,7 @@
         </div>
         </nav>
         <div id="messages">
-          <% @room.messages.last(5).each do |message| %>
+          <% @room.messages.last(15).each do |message| %>
           <%= render 'messages/message', message: message %>
           <% end %>
         </div>

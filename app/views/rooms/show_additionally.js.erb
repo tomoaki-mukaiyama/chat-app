@@ -1,0 +1,8 @@
+console.log("hello")
+
+// 今回は上からメッセージを追加
+messageContainer.insertAdjacentHTML('afterbegin', "<%= j(render @messages) %>")
+// メッセージが存在するときだけ，更に読み込み可能とする
+<% if @messages.present? %>
+    showAdditionally = true
+<% end %>
