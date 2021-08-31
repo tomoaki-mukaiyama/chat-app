@@ -111,7 +111,7 @@ document.addEventListener('turbolinks:load', () => {
     var oldestMessageTop = document.querySelectorAll(".message.mb-2")[0].getBoundingClientRect().top
     if (navbarBottom === oldestMessageTop && showAdditionally) {
       console.log("scrolled to top...")
-      showAdditionally = false
+      // showAdditionally = false
       // 表示済みのメッセージの内，最も古いidを取得
       oldestMessageId = document.querySelectorAll(".message.mb-2")[0].id.replace(/[^0-9]/g, '')
       // Ajax を利用してメッセージの追加読み込みリクエストを送る。最も古いメッセージidも送信しておく。

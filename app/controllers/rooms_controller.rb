@@ -19,12 +19,13 @@ class RoomsController < ApplicationController
   end
 
   def show_additionally
+    Rails.logger.level = 0
     last_id = params[:last_id].to_i
     room_id = Message.find(last_id).room_id
     @messages = Message.where(id: 1..last_id, room_id: room_id).last(5)
-    # logger.debug("")
-    # Rails.logger.level = 1
     # byebug
+    logger.debug @messages.each{|m| p m }
+    Rails.logger.level = 3
   end
 
   # GET /rooms/new
@@ -39,7 +40,7 @@ class RoomsController < ApplicationController
       if @room.save
         format.html { redirect_to @room, notice: "Room was successfully created." }
       else
-        format.html { render :new   , status: :unprocessable_entity }
+        format.html { render :new , status: :unprocessable_entity }
       end
     end
   end
