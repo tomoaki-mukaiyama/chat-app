@@ -113,8 +113,18 @@ ul {
     }
 
     .chat-room {
+        height: 668px;
         .chat-box {
             width: 97%;
+            height: 82px;
+        }
+        
+        #messages {
+            margin-top: 118px;
+        }
+
+        .navbar {
+            top: -60px;
         }
     }
 }
