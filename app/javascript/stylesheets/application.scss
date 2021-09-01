@@ -1,8 +1,11 @@
 @import "bootstrap/scss/bootstrap";
     
 
+html,body{
+}
 body {
     overflow: hidden;
+    // overflow-y: hidden;
 
     ::-webkit-scrollbar {
         display: none;
@@ -34,17 +37,21 @@ ul {
 }
 
 .navbar {
+    position: absolute;
+    top: -59px;
     border-bottom: 1px solid black;
     margin-left: -15px;
     width: calc(100% + 30px);
 }
 
 .chat-room {
-    height: 100vh;
+    position: relative;
+    height: 90vh;
 
 
     #messages {
-        height: calc(100% - 135px);
+        margin-top: 60px;
+        height: calc(100% - 65px);
         overflow-y: scroll;
     }
 
