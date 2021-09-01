@@ -3,10 +3,10 @@ import consumer from "./consumer"
 document.addEventListener('turbolinks:load', () => {
   // console.log("1")
   // console.log(consumer.subscriptions)
-    // //全部屋に同時に送信しないように部屋を移動するたびにサブスクを全削除
-    consumer.subscriptions.subscriptions.forEach((sub) => {
-      consumer.subscriptions.remove(sub)
-    })
+  // //全部屋に同時に送信しないように部屋を移動するたびにサブスクを全削除
+  consumer.subscriptions.subscriptions.forEach((sub) => {
+    consumer.subscriptions.remove(sub)
+  })
   //部屋に入ると同時に入力フォームをフォーカス
   document.querySelector("#message_content").focus();
 
@@ -20,7 +20,7 @@ document.addEventListener('turbolinks:load', () => {
   function scrollToNewMessage() {
     var nodes = document.querySelectorAll(".message.mb-2")
     nodes = Array.from(nodes)
-    if (nodes.length &&  nodes.length > 0) {
+    if (nodes.length && nodes.length > 0) {
       nodes.pop().scrollIntoView({
         behavior: "instant",
         block: "start"
@@ -110,20 +110,22 @@ document.addEventListener('turbolinks:load', () => {
     //一番上のメッセージの上端の位置
     var oldestMessageTop = document.querySelectorAll(".message.mb-2")[0].getBoundingClientRect().top
     if (navbarBottom === oldestMessageTop && showAdditionally) {
-      console.log("scrolled to top...")
-      // showAdditionally = false
+      showAdditionally = false
       // 表示済みのメッセージの内，最も古いidを取得
       oldestMessageId = document.querySelectorAll(".message.mb-2")[0].id.replace(/[^0-9]/g, '')
       // Ajax を利用してメッセージの追加読み込みリクエストを送る。最も古いメッセージidも送信しておく。
-      var req = new XMLHttpRequest();
-
-      req.open("GET", `/show_additionally?last_id=${oldestMessageId}`)
-      req.send()
-      // req.onload = function() {
-      //   console.log(req)
-      // }
+      $.ajax({
+        type: 'GET',
+        url: '/show_additionally',
+        cache: false,
+        data: {
+          oldest_message_id: oldestMessageId,
+          remote: true
+        }
+      })
     }
-  }, {passive: true});
+  }, {
+    passive: true
+  });
 
 })
-

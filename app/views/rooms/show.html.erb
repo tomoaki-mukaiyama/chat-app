@@ -4,31 +4,14 @@
 <div id="user-id" data-user-id="<%= current_user.id %>"></div>
 <div class="container-fluid">
   <div class="row">
-    <div class="col-2">
-    </div>
-    <div class="col-8 room-show">
+    <div class="main-content">
       <% if @room.present? %>
       <div class="chat-room">
-        <nav class="navbar navbar-light">
-        <div class="nav-inner-left">
-            <div class="navbar-button">
-              <%= link_to "部屋一覧", "/rooms" %>
-            </div>
-            <div class="navbar-button">
-              <%= link_to "部屋削除", "/rooms/#{@room.id}", method: :delete %>
-            </div>
-        </div>
-        <div class="nav-inner-right">
-            <div class="hello">
-              Hello,　
-            </div>
-            <div class="user-form">
-              <%= render "users/form" , user: @user %>
-            </div>
-        </div>
+        <nav class="navbar">
+          <%= render "users/form" , user: @user %>
         </nav>
         <div id="messages">
-          <% @room.messages.last(15).each do |message| %>
+          <% @last_messages.each do |message| %>
           <%= render 'messages/message', message: message %>
           <% end %>
         </div>
@@ -38,6 +21,4 @@
       </div>
       <% end %>
     </div>
-    <div class="col-2"></div>
-  </div>
 </div>

@@ -13,19 +13,21 @@ class RoomsController < ApplicationController
   
   # GET /rooms/1 or /rooms/1.json
   def show
-    @rooms = Room.all
+    @last_messages = @room.messages.last(15)
     @user = User.find_by(id: current_user.id)
     render 'show'
   end
 
+  # GET/rooms/show_additionally?room_id=":id" sctollTOP => request AJAX
+  # メッセージを上までスクロールしたらroom_channel.jsで設定した'scroll'イベントリスナーによってajaxによってこの関数が呼び出される
+  # この後show_additionally.js.erbが実行される
   def show_additionally
-    Rails.logger.level = 0
-    last_id = params[:last_id].to_i
+    # 一番上のメッセージid取得
+    last_id = params[:oldest_message_id].to_i
+    #現在の部屋id取得
     room_id = Message.find(last_id).room_id
-    @messages = Message.where(id: 1..last_id, room_id: room_id).last(5)
-    # byebug
-    logger.debug @messages.each{|m| p m }
-    Rails.logger.level = 3
+    # last_idとroom_idを使って、読み込みたい５件を取得
+    @messages = Message.where(id: 1..last_id, room_id: room_id).where.not(id: last_id).last(5)
   end
 
   # GET /rooms/new

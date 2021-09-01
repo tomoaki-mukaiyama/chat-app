@@ -1,3 +1,6 @@
+@import "bootstrap/scss/bootstrap";
+    
+
 body {
     overflow-y: hidden;
 
@@ -13,31 +16,12 @@ ul {
     margin-left: -42px;
 }
 
-.hello,.user-form{
-    float: left;
+.row {
+    justify-content: center;
 }
 
-.navbar-button>a {
-    color: black;
-    padding: 10px 20px;
-    border-radius: 3px;
-    border: solid 1px black;
-    
-}
-
-.navbar-button>a:hover {
-    background-color: #c7dbfa;
-    text-decoration: none;
-    color: black;
-}
-
-.navbar-button {
-    margin-right: 15px;
-    float: left;
-    margin-bottom: 15px;
-    margin-top: 15px;
-    text-align: center;
-    width: max-content;
+.main-content { 
+    width: 66%;
 }
 
 #room_name {
@@ -49,25 +33,10 @@ ul {
     height: 100px
 }
 
-.col-8.room-show {
-    border-right: 1px solid black;
-    border-left: 1px solid black;
-}
-
-.navbar-top {
-    height: 50px;
-}
-
 .navbar {
     border-bottom: 1px solid black;
     margin-left: -15px;
     width: calc(100% + 30px);
-}
-
-.nav-inner-left {
-    justify-content: start;
-
-
 }
 
 .chat-room {
@@ -75,7 +44,7 @@ ul {
 
 
     #messages {
-        height: calc(100% - 156px);
+        height: calc(100% - 135px);
         overflow-y: scroll;
     }
 
@@ -119,8 +88,7 @@ ul {
         padding: 20px;
         margin-bottom: -15px;
         margin-left: -15px;
-        border-top: 1px solid black;
-        width: 66.5%;
+        width: 69%;
 
         input[type=text] {
             height: 45px;
@@ -128,11 +96,18 @@ ul {
             padding: 8px;
             border: solid 1px;
         }
+    }
+}
 
-        .btn {
-            height: 45px;
-            width: 132px;
-            border: solid 1px;
+@media (max-width: 600px) {
+    .main-content {
+        justify-content: center;
+        width: 90%;
+    }
+
+    .chat-room {
+        .chat-box {
+            width: 97%;
         }
     }
 }
