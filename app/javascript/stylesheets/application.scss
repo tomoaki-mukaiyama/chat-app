@@ -1,8 +1,5 @@
 @import "bootstrap/scss/bootstrap";
     
-
-html,body{
-}
 body {
     overflow: hidden;
     // overflow-y: hidden;
@@ -72,6 +69,14 @@ ul {
                 font-size: 0.8rem;
                 color: #777777;
                 margin-left: 10px;
+            }
+
+            .time {
+                font-size: 13px;
+            }
+
+            .author, .time {
+                float: left;
             }
 
         }
