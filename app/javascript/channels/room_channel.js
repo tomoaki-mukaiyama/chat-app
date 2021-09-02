@@ -107,10 +107,10 @@ document.addEventListener('turbolinks:load', () => {
   window.showAdditionally = true
   document.querySelector("#messages").addEventListener('scroll', () => {
     //navbarの下線の位置
-    var navbarBottom = document.querySelector(".navbar.navbar-light").getBoundingClientRect().bottom
+    var messagesTop = document.querySelector("#messages").getBoundingClientRect().top
     //一番上のメッセージの上端の位置
-    var oldestMessageTop = document.querySelectorAll(".message.mb-2")[0].getBoundingClientRect().top
-    if (navbarBottom === oldestMessageTop && showAdditionally) {
+    var oldestMessageTop = document.querySelectorAll(".message.mb-2")[0].getBoundingClientRect().top - 1
+    if (messagesTop === oldestMessageTop && showAdditionally) {
       showAdditionally = false
       // 表示済みのメッセージの内，最も古いidを取得
       oldestMessageId = document.querySelectorAll(".message.mb-2")[0].id.replace(/[^0-9]/g, '')
