@@ -5,6 +5,8 @@
         </div>
         <div class="author">
             <%= message.user.username %>
+        </div>
+        <div class="time">
             <%= remove_zero message.created_at.to_s(:time_jp) %>
         </div>
     </div>

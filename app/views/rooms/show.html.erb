@@ -8,7 +8,9 @@
       <% if @room.present? %>
       <div class="chat-room">
         <nav class="navbar">
-          <%= render "users/form" , user: @user %>
+          <div class="navbar-button">
+            <%= link_to "部屋一覧", "/rooms" %>
+          </div>
         </nav>
         <div id="messages">
           <% @last_messages.each do |message| %>

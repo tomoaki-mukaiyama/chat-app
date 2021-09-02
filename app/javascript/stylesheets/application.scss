@@ -35,10 +35,32 @@ ul {
 
 .navbar {
     position: absolute;
-    top: -59px;
-    border-bottom: 1px solid black;
+    top: -65px;
     margin-left: -15px;
     width: calc(100% + 30px);
+}
+
+.navbar-button>a {
+    color: black;
+    padding: 10px 20px;
+    border-radius: 3px;
+    border: solid 1px black;
+    
+}
+
+.navbar-button>a:hover {
+    background-color: #c7dbfa;
+    text-decoration: none;
+    color: black;
+}
+
+.navbar-button {
+    margin-right: 15px;
+    float: left;
+    margin-bottom: 15px;
+    margin-top: 15px;
+    text-align: center;
+    width: max-content;
 }
 
 .chat-room {
@@ -47,7 +69,8 @@ ul {
 
 
     #messages {
-        margin-top: 60px;
+        border: solid 1px;
+        margin-top: 79px;
         height: calc(100% - 65px);
         overflow-y: scroll;
     }
@@ -57,6 +80,7 @@ ul {
 
         .content-container {
             display: inline-block;
+            margin: 0px 15px;
 
             .content {
                 border: solid 1px black;
@@ -120,14 +144,14 @@ ul {
     }
 
     .chat-room {
-        height: 614px;
+        height: 670px;
         .chat-box {
             width: 97%;
             height: 82px;
         }
         
         #messages {
-            margin-top: 154px;
+            margin-top: 134px;
         }
 
         .navbar {
