@@ -8,6 +8,9 @@ ruby 2.6.6p146
 
 gem 'redis'
 
+yarn add jquery popper.js 'bootstrap@4.0'
+
+
 無限スクロール実装
 
 room_channel.jsに"scroll"イベントリスナーを設置、
