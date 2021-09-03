@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+
   def update
     preveous_username = set_user.username
     respond_to do |format|

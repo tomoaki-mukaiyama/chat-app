@@ -10,7 +10,7 @@
       <%= render 'rooms/form', room: Room.new %>
       <ul>
         <% @rooms.each do |room| %>
-        <li><%= link_to " - #{room.id}", "/rooms/#{room.id}" %></li>
+        <li><%= link_to " - #{room.id} . #{room.name}", "/rooms/#{room.id}" %></li>
         <% end %>
       </ul>
     </div>

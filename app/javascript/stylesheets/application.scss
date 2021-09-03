@@ -40,12 +40,23 @@ ul {
     width: calc(100% + 30px);
 }
 
+.username-button {
+    border-radius: 3px;
+    color: #1b1e21;
+    background-color: white;
+    border-color: #1b1e21;
+}
+.username-button:hover {
+    background-color: #c7dbfa;
+    text-decoration: none;
+    color: black;
+}
+
 .navbar-button>a {
     color: black;
     padding: 10px 20px;
     border-radius: 3px;
     border: solid 1px black;
-    
 }
 
 .navbar-button>a:hover {

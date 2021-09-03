@@ -15,7 +15,6 @@ class RoomsController < ApplicationController
   def show
     @last_messages = @room.messages.last(15)
     @user = User.find_by(id: current_user.id)
-    render 'show'
   end
 
   # GET/rooms/show_additionally?room_id=":id" sctollTOP => request AJAX
