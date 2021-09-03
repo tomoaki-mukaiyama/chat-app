@@ -12,15 +12,16 @@
             <%= link_to "部屋一覧", "/rooms" %>
           </div>
 
-          <button type="button" class="btn username-button" data-toggle="modal" data-target="#exampleModal">
+          <button type="button" class="btn username-button" data-toggle="modal" data-target="#usernameModal">
             名前変更
           </button>
 
           <!-- Modal -->
-          <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal" id="usernameModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-center" role="document">
               <div class="modal-content">
                 <div class="modal-body">
+                  <button class="modal-close-button" data-dismiss="modal"></button>
                   <%= render 'users/form' %>
                 </div>
               </div>
