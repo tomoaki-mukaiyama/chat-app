@@ -1,4 +1,5 @@
 <%= form_with model: @user do |form| %>
   <%= form.text_field :username, class: "username-form" %>
   <%= form.hidden_field :room_id, value: @room.id %>
+  <%= form.submit "更新", data: { dismiss: "modal"} %>
 <% end %>

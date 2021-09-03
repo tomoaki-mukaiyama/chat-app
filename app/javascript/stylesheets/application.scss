@@ -33,6 +33,10 @@ ul {
     height: 100px
 }
 
+.username-form {
+    width: 80%;
+}
+
 .navbar {
     position: absolute;
     top: -65px;
@@ -74,9 +78,7 @@ ul {
     width: max-content;
 }
 
-.modal-dialog-center {
-    padding-top: 150%;
-  }
+
 
 .chat-room {
     position: relative;
@@ -158,6 +160,14 @@ ul {
         width: 90%;
     }
 
+    .modal-dialog-center {
+        padding-top: 150%;
+    }
+
+    .username-form {
+        width: 80%;
+    }
+
     .chat-room {
         height: 645px;
         .chat-box {
@@ -166,11 +176,11 @@ ul {
         }
         
         #messages {
-            margin-top: 156px;
+            margin-top: 122px;
         }
 
         .navbar {
-            top: -60px;
+            top: 569px;
         }
     }
 }
