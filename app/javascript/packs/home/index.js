@@ -1,14 +1,3 @@
-var usernameButton = document.querySelector(".username-button")
-usernameButton.addEventListener("click", () => {
-    
-    var checkExist = setInterval(() => {
-        if (document.querySelector(".username-form")) {
-            clearInterval(checkExist)
-        document.querySelector(".username-form").focus()
-    }
-}, 500)
-})
-
 window.onload = function () {
     var nodes = document.querySelectorAll(".message.mb-2")
     nodes = Array.from(nodes)
